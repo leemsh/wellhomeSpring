@@ -25,7 +25,7 @@ public class VideoService {
         return new SuccessResponse<>(videoListList, 200);
     }
 
-    public SuccessResponse<List<VideoList>> getVideoList(){
+    public SuccessResponse<List<VideoList>> getVideoAll(){
         List<VideoList> videoListList = videoListRepository.findAll();
         return new SuccessResponse<>(videoListList, 200);
     }
