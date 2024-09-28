@@ -20,18 +20,21 @@ public class VideoController {
 
     private final VideoService videoService;
 
+    @CrossOrigin(origins = "*")
     @GetMapping(value="/getbylocation", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<SuccessResponse<List<VideoList>>> getVideoByLocation(@RequestParam("location") String location) {
         SuccessResponse<List<VideoList>> response = videoService.getVideoByLocation(location);
         return new ResponseEntity<>(response, HttpHeaderMaker.makeHeader(), response.getStatus());
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping(value="/getall", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<SuccessResponse<List<VideoList>>> getVideoAll() {
         SuccessResponse<List<VideoList>> response = videoService.getVideoAll();
         return new ResponseEntity<>(response, HttpHeaderMaker.makeHeader(), response.getStatus());
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping(value="/create", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<SuccessResponse<String>> createVideo(
             @RequestPart VideoList videoList,
@@ -41,7 +44,7 @@ public class VideoController {
         return new ResponseEntity<>(response, HttpHeaderMaker.makeHeader(), response.getStatus());
     }
 
-
+    @CrossOrigin(origins = "*")
     @DeleteMapping(value="/delete", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<SuccessResponse<String>> deleteVideo(@RequestParam int id){
         SuccessResponse<String> response = videoService.deleteVideo(id);

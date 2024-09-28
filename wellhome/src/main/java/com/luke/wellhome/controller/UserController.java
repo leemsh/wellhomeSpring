@@ -19,6 +19,7 @@ public class UserController {
 
     private final UserService userService;
 
+    @CrossOrigin(origins = "*")
     @GetMapping(value="/get", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<SuccessResponse<UserEntity>> getUser(@RequestParam String email) {
         SuccessResponse<UserEntity> response = userService.getUser(email);

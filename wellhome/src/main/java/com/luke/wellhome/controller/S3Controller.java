@@ -17,6 +17,7 @@ public class S3Controller {
     @Autowired
     private S3Service s3Service;
 
+    @CrossOrigin(origins = "*")
     @GetMapping(path = "/data")
     public ResponseEntity<byte[]> getImage(@RequestParam String fileName) {
         return s3Service.download(fileName);
