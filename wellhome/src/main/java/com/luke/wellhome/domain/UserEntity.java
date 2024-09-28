@@ -23,5 +23,4 @@ public class UserEntity {
 
     private String nickname;
     private String location;
-    private String
 }

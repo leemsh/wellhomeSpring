@@ -18,5 +18,5 @@ public class VideoList {
     private String videoTitle;
     private String videoDescription;
     private String location;
-    private String videoUrl;
+    private int connection;
 }
