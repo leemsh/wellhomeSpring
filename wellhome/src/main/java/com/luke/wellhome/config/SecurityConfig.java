@@ -95,7 +95,7 @@ public class SecurityConfig {
 
                         //임시허용
                         .requestMatchers("/user/get").permitAll()
-                        .requestMatchers("video/getall").permitAll()
+                        .requestMatchers("/video/getall").permitAll()
                         .requestMatchers("/video/create").permitAll()
                         .requestMatchers("/video/delete").permitAll()
                         .requestMatchers("/video/getbylocation").permitAll()
