@@ -93,7 +93,14 @@ public class SecurityConfig {
                         .requestMatchers("/admin").hasRole("ADMIN")
                         .requestMatchers("/advertiser").hasRole("ADVERTISER")
                         .requestMatchers("/reissue").permitAll()
+
+                        //임시허용
+                        .requestMatchers("/user/get").permitAll()
+
                         .anyRequest().authenticated());
+
+
+
 
         http
                 .addFilterBefore(new JWTFilter(jwtUtil), LoginFilter.class);
