@@ -25,6 +25,11 @@ public class VideoService {
         return new SuccessResponse<>(videoListList, 200);
     }
 
+    public SuccessResponse<List<VideoList>> getVideoList(){
+        List<VideoList> videoListList = videoListRepository.findAll();
+        return new SuccessResponse<>(videoListList, 200);
+    }
+
     public SuccessResponse<String> createVideo(VideoList video, MultipartFile file){
         try {
             String filePath = videoUploadService.createVideo(video.getVideoTitle(), file);

@@ -26,6 +26,12 @@ public class VideoController {
         return new ResponseEntity<>(response, HttpHeaderMaker.makeHeader(), response.getStatus());
     }
 
+    @GetMapping(value="/getall", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<SuccessResponse<List<VideoList>>> getVideoAll() {
+        SuccessResponse<List<VideoList>> response = videoService.getVideoAll();
+        return new ResponseEntity<>(response, HttpHeaderMaker.makeHeader(), response.getStatus());
+    }
+
     @PostMapping(value="/create", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<SuccessResponse<String>> createVideo(
             @RequestPart VideoList videoList,
