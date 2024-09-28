@@ -6,5 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface VideoListRepository extends JpaRepository<VideoList, Integer> {
-    public List<VideoList> findByLocation(String location);
+    List<VideoList> findByLocation(String location);
+    VideoList findById(int id);
 }
