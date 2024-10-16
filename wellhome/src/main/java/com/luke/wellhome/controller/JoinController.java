@@ -1,7 +1,7 @@
 package com.luke.wellhome.controller;
 
 
-import com.luke.wellhome.dto.JoinDTO;
+import com.luke.wellhome.domain.UserEntity;
 import com.luke.wellhome.service.JoinService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,9 +19,9 @@ public class JoinController {
     }
 
     @PostMapping("/join")
-    public String joinProcess(JoinDTO joinDTO) {
+    public String joinProcess(UserEntity userEntity) {
 
-        joinService.joinProcess(joinDTO);
+        joinService.joinProcess(userEntity);
 
         return "ok";
     }
