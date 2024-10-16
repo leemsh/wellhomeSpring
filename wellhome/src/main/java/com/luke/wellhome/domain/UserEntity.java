@@ -23,4 +23,6 @@ public class UserEntity {
 
     private String nickname;
     private String location;
+
+    private int price;
 }

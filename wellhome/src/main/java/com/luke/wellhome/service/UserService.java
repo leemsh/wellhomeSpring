@@ -16,4 +16,11 @@ public class UserService {
         UserEntity user = userRepository.findByUsername(email);
         return new SuccessResponse<>(user, 200);
     }
+
+    public SuccessResponse<String> updatePrice(UserEntity user){
+        UserEntity userData = userRepository.findByUsername(user.getUsername());
+        userData.setPrice(user.getPrice());
+        userRepository.save(userData);
+        return new SuccessResponse<>("update Success", 200);
+    }
 }
